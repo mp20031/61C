@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Carbajal Guillén, Katya Reneé">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="description" content="Guia 61c: Programación Front-End Usando WebAPIs TPI-2021 CICLO II">
+	<title>MP20031-GUIA62C</title>
+
+	<link REL=StyleSheet HREF="estilo.css" TYPE="text/css" MEDIA=screen>
+
+	<script src="codigo.js"></script>
+
+</head>
+
+<body>
+	<h1>EJEMPLO DE WEB API - GUIA61C  </h1>
+	<h2>MP20031-Kevin Moran</h2>
+	<h3>Integrante del grupo #04 de la asignatura de TPI</h3>
+
+	<p><button onclick="obtenerProductos();this.style.display='none';">Obtener Productos</button></p>
+
+	<div id="formagregar" style="display: none;" >
+		<form class="formagregar">
+			<h2 class="producto">Agregar Producto</h2>
+			<p><label class="marginTitulo">Titulo: </label><input type="text" id="AgregarTitulo" class="ingresar"> 
+				<label>Precio: </label><input type="text" id="AgregarPrecio" class="ingresar">
+			</p>
+			<p>
+				<label>Descripción: </label><input type="text" id="AgregarDescripcion" class="ingresar" size="54">
+			</p>
+			<p>
+			<label class="marginImagen">Imagen: </label><input type="text" id="AgregarUrl" class="ingresar"> 
+			<label>Categoria: </label>
+			<select id="AgregarCategoria">
+				<option selected></option>
+				<option value="electronicos">electronicos</option>
+				<option value="joyeria">joyeria</option>
+				<option value="caballeros">caballeros</option>
+				<option value="damas">damas</option>
+				<i></i>
+			</select>
+			</p>
+			<p><button onclick="agregarProductos()">Agregar Producto</button></p>
+		 </form>
+	</div>
+	<br>
+	<div id="listado" style="display:none;">
+		<form name="filtroprods" id="filtroprods">
+			Seleccione Categorias
+			<input type="checkbox" id="c1" value="c1" checked>Electronicos
+			<input type="checkbox" id="c2" value="c2" checked>Joyería
+			<input type="checkbox" id="c3" value="c3" checked>Ropa Caballero
+			<input type="checkbox" id="c4" value="c4" checked>Ropa Dama
+
+			<ol>
+				<li>Click en la imagen para Acercamiento</li>
+				<li>Click en precio para ordenar Asc o Desc</li>
+			</ol>
+
+			<table id="tabla">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Foto</th>
+						<th id="price">Price</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Category</th>
+						<th>Accion</th>
+					</tr>
+				</thead>
+				<tbody id="tbody"></tbody>
+			</table>
+
+		</form>
+	</div>
+
+</body>
+
+</html>
